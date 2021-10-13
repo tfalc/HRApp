@@ -48,21 +48,18 @@ public class Department {
         return null;
     }
 
-    public Double totalSalary() {
+    public Double getTotalSalary() {
         double total = 0.0;
         for (int i = 0; i < employees.length; i++) {
-            total += employee.getSalary();
+            total += employees[i].getSalary();
         }
         return total;
     }
 
     public Double averageSalary() {
-        double average = 0.0, count = 0.0;
-        try {
-            average = average / count;
-            System.out.println("Average price " + average + ", Count " + count);
-        } catch (ArithmeticException e) {
-            System.out.println("Cant' divide " + average + " by " + count);
+        double average = 0.0;
+        if(lastAddedEmployeeIndex > -1){
+            return getTotalSalary() / (lastAddedEmployeeIndex+1);
         }
         return average;
     }
