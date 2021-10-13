@@ -1,24 +1,28 @@
 public class Department {
 
+    private final Employee[] employees = new Employee[10];
     private String name;
-    private Employee[] employees = new Employee[10];
     private int lastAddedEmployeeIndex = -1;
 
     private Employee employee;
 
-    public Department(String name){
+    public Department(String name) {
         this.name = name;
     }
-    
-    public void addEmployee(Employee employee){
-        if(lastAddedEmployeeIndex < employees.length){
+
+    public void addEmployee(Employee employee) {
+        if (lastAddedEmployeeIndex < employees.length) {
             lastAddedEmployeeIndex++;
             employees[lastAddedEmployeeIndex] = employee;
         }
     }
 
-    public Employee[] getEmployees(int id){
-        return employees;
+    public Employee[] getEmployees() {
+        Employee[] actualEmployee = new Employee[lastAddedEmployeeIndex+1];
+        for (int i = 0; i < actualEmployee.length; i++) {
+            actualEmployee[i] = employees[i];
+        }
+        return actualEmployee;
     }
 
     public String getName() {
@@ -29,23 +33,23 @@ public class Department {
         this.name = name;
     }
 
-    public int numberEmployees(Employee[] employees){
+    public int numberEmployees(Employee[] employees) {
         return employees.length;
     }
 
-    public Employee[] findEmployeeById(Employee[] employees){
+    public Employee[] findEmployeeById(Employee[] employees) {
         return getEmployees(employee.getId());
     }
 
-    public Double totalSalary(){
+    public Double totalSalary() {
         double total = 0.0;
-        for(int i = 0; i < employees.length; i++){
+        for (int i = 0; i < employees.length; i++) {
             total += employee.getSalary();
         }
         return total;
     }
 
-    public Double averageSalary(){
+    public Double averageSalary() {
         double average = 0.0, count = 0.0;
         try {
             average = average / count;
