@@ -30,7 +30,7 @@ public class Department {
     }
 
     public Employee[] findEmployeeById(Employee[] employees){
-        return getEmployees(employee.getId(employees));
+        return getEmployees(employee.getId());
     }
 
     public Double totalSalary(){
