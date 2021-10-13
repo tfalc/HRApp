@@ -10,7 +10,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    public int getId(Employee[] employees) {
+    public int getId() {
         return id;
     }
 
@@ -36,6 +36,6 @@ public class Employee {
 
     @Override
     public String toString(){
-        return getName() + ", " + getSalary();
+        return getId() + ", "+ getName() + ", " + getSalary();
     }
 }
