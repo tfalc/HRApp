@@ -1,7 +1,7 @@
 public class Department {
 
     private String name;
-    private Employee[] employees;
+    private Employee[] employees = new Employee[10];
 
     private Employee employee;
 
