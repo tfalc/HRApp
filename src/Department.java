@@ -2,11 +2,19 @@ public class Department {
 
     private String name;
     private Employee[] employees = new Employee[10];
+    private int lastAddedEmployeeIndex = -1;
 
     private Employee employee;
 
-    public void addEmployee(Employee[] someEmployees){
-        employees = someEmployees;
+    public Department(String name){
+        this.name = name;
+    }
+    
+    public void addEmployee(Employee employee){
+        if(lastAddedEmployeeIndex < employees.length){
+            lastAddedEmployeeIndex++;
+            employees[lastAddedEmployeeIndex] = employee;
+        }
     }
 
     public Employee[] getEmployees(int id){
@@ -19,10 +27,6 @@ public class Department {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setEmployees(Employee[] employees) {
-        this.employees = employees;
     }
 
     public int numberEmployees(Employee[] employees){
