@@ -63,4 +63,9 @@ public class Department {
         }
         return average;
     }
+
+    @Override
+    public String toString(){
+        return name;
+    }
 }
