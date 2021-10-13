@@ -41,8 +41,10 @@ public class Department {
 
     public Employee findEmployeeById(int empID) {
         for( Employee emp : employees){
-            if(emp.getId() == empID){
-                return emp;
+            if(emp != null) {
+                if (emp.getId() == empID) {
+                    return emp;
+                }
             }
         }
         return null;
