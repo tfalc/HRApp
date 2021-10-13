@@ -18,7 +18,7 @@ public class Department {
     }
 
     public Employee[] getEmployees() {
-        Employee[] actualEmployee = new Employee[lastAddedEmployeeIndex+1];
+        Employee[] actualEmployee = new Employee[lastAddedEmployeeIndex + 1];
         for (int i = 0; i < actualEmployee.length; i++) {
             actualEmployee[i] = employees[i];
         }
@@ -35,10 +35,17 @@ public class Department {
 
     public int numberEmployees(Employee[] employees) {
         return employees.length;
+
+        //return lastAddedEmployeeIndex+1;
     }
 
-    public Employee[] findEmployeeById(Employee[] employees) {
-        return getEmployees(employee.getId());
+    public Employee findEmployeeById(int empID) {
+        for( Employee emp : employees){
+            if(emp.getId() == empID){
+                return emp;
+            }
+        }
+        return null;
     }
 
     public Double totalSalary() {
