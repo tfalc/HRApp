@@ -1,6 +1,6 @@
 public class Department {
 
-    private final Employee[] employees = new Employee[10];
+    private static final Employee[] employees = new Employee[10];
     private String name;
     private int lastAddedEmployeeIndex = -1;
 
